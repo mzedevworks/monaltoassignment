@@ -1,0 +1,23 @@
+<div ng-if="!images">
+  Loading images...
+</div>
+
+<div ng-if="images.Response!=='False'">
+	<p> <b>Total Hits: {{ images.totalHits }} </b></p>
+	<div class="col-lg-4 label " ng-repeat=" image in images.hits | orderBy: 'views' " ng-class="{'new-row': startNewRow($index, columnBreak) }" >
+	   <br>
+		<p><img class="img img-circle" src="{{ image.webformatURL }}" width="{{ image.previewWidth }}" height="{{ image.previewHeight }}"></p>
+		<h4><b>Image Tags:</b> {{ image.tags }}</h4>
+		<h4><b>Views:</b> {{ image.views }}</h4>
+		<h4><b>Likes:</b> {{ image.likes }}</h4>
+		<h4><b>Comments:</b> {{ image.comments }}</h4>
+		<h4><b>Downloads:</b> {{ image.downloads }}</h4>
+		<h4><b>Favorites:</b> {{ image.favorites }}</h4>
+		<h4><b>User:</b> {{ image.user }}</h4>
+		<br/>
+	</div>
+	
+ </div>
+<div ng-if="images.Response==='False'">
+  No results found.
+</div>
