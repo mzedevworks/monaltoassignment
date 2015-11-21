@@ -1,2 +1,3 @@
 # monaltoassignment
-Monalto Assignment to fetch data from a web service
+Build a web app that consumes data from any open API. 
+
